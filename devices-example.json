@@ -1,0 +1,27 @@
+[
+    {
+        "id": "unique-identifier-001",
+        "name": "Living Room Light",
+        "type": "lightbulb",
+        "room": "Living Room",
+        "ip": "192.168.1.10",
+        "status": "on",
+        "additionalInfo": {
+            "brightness": 80,
+            "color": "#FFFFFF",
+            "model": "LB130"
+        }
+    },
+    {
+        "id": "unique-identifier-002",
+        "name": "Bedroom Plug",
+        "type": "plug",
+        "room": "Bedroom",
+        "ip": "192.168.1.11",
+        "status": "off",
+        "additionalInfo": {
+            "energyConsumption": "100W",
+            "model": "HS100"
+        }
+    }
+]
