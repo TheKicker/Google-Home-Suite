@@ -14,6 +14,8 @@
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "tplink-lightbulb": "^1.8.0"
+    "moment": "^2.30.1",
+    "tplink-lightbulb": "^1.8.0",
+    "tplink-smarthome-api": "^5.0.0"
   }
 }

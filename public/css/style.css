@@ -1,3 +1,59 @@
 body {
-    padding-top: 50px;
-}
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  #devicesList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #devicesList li {
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+    
+    #devicesList li {
+      flex-direction: column;
+      align-items: start;
+    }
+    
+    button {
+      margin-top: 5px;
+      width: 100%;
+    }
+  }

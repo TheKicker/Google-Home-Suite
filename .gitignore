@@ -3,6 +3,15 @@
 
 # Utilities
 devices.json
+node_modules/
+logs/
+.env
+.vscode/
+.DS_Store
+dist/
+build/
+*.log
+*.tmp
 
 ### Linux ###
 *~

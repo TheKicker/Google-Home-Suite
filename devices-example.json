@@ -1,27 +1,29 @@
 [
     {
-        "id": "unique-identifier-001",
-        "name": "Living Room Light",
-        "type": "lightbulb",
-        "room": "Living Room",
-        "ip": "192.168.1.10",
-        "status": "on",
-        "additionalInfo": {
-            "brightness": 80,
-            "color": "#FFFFFF",
-            "model": "LB130"
-        }
+      "id": "example-device-001",
+      "name": "Example Plug",
+      "type": "Plug",
+      "room": "Example Room",
+      "ip": "192.168.1.100",
+      "mac-address": "AA:BB:CC:DD:EE:FF",
+      "status": "on"
     },
     {
-        "id": "unique-identifier-002",
-        "name": "Bedroom Plug",
-        "type": "plug",
-        "room": "Bedroom",
-        "ip": "192.168.1.11",
-        "status": "off",
-        "additionalInfo": {
-            "energyConsumption": "100W",
-            "model": "HS100"
-        }
+      "id": "example-device-002",
+      "name": "Example Light",
+      "type": "lightbulb",
+      "room": "Another Room",
+      "ip": "192.168.1.101",
+      "mac-address": "11:22:33:44:55:66",
+      "status": "off"
+    },
+    {
+      "id": "example-device-003",
+      "name": "Another Example Plug",
+      "type": "Plug",
+      "room": "Living Room",
+      "ip": "192.168.1.102",
+      "mac-address": "00:11:22:33:44:55",
+      "status": "on"
     }
-]
+  ]
