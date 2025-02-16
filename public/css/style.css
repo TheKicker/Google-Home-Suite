@@ -1,59 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  background-color: #f8f9fa; /* Light background color */
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 0.25rem;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Adjust spacing for elements within the list item */
+.list-group-item > span {
+  flex: 1; /* Allow this to grow and take available space */
+  word-wrap: break-word; /* Ensures long words or strings wrap */
+}
+
+.btn-group {
+  white-space: nowrap; /* Prevent buttons from wrapping */
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  .list-group-item {
+      padding: 0.5rem; /* Smaller padding for smaller screens */
   }
   
-  .container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
+  .btn-group {
+      display: flex; /* Ensure buttons are in a flex container */
+      flex-direction: column; /* Stack buttons vertically on mobile */
   }
   
-  #devicesList {
-    list-style: none;
-    padding: 0;
+  .btn-group button {
+      width: 100%; /* Full width buttons on mobile */
+      margin: 2px 0; /* Small margin for visual separation */
   }
-  
-  #devicesList li {
-    margin-bottom: 10px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  button {
-    padding: 5px 10px;
-    cursor: pointer;
-    background: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsive design */
-  @media screen and (max-width: 600px) {
-    .container {
-      width: 100%;
-    }
-    
-    #devicesList li {
-      flex-direction: column;
-      align-items: start;
-    }
-    
-    button {
-      margin-top: 5px;
-      width: 100%;
-    }
-  }
+}

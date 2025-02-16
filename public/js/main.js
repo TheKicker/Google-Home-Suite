@@ -19,11 +19,26 @@ function fetchDevices() {
             Promise.all(promises).then(updatedDevices => {
                 updatedDevices.forEach(device => {
                     const li = document.createElement('li');
-                    li.textContent = `${device.room + " " + device.name}`;
-                    const onButton = createButton('On', () => controlDevice(device.id, 'on'));
-                    const offButton = createButton('Off', () => controlDevice(device.id, 'off'));
-                    li.appendChild(onButton);
-                    li.appendChild(offButton);
+                    li.className = 'list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-center';
+
+                    // Device info with emoji
+                    const deviceInfo = document.createElement('span');
+                    const emoji = device.type === 'Plug' ? '🔌' : '💡';
+                    deviceInfo.innerHTML = emoji + ' ' + `${device.room} ${device.name}`;
+                    deviceInfo.className = 'mr-sm-2 mb-2 mb-sm-0';
+
+                    // Button container
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.className = 'btn-group d-flex flex-row';
+
+                    const onButton = createButton('On', 'btn btn-success', () => controlDevice(device.id, 'on'));
+                    const offButton = createButton('Off', 'btn btn-danger', () => controlDevice(device.id, 'off'));
+
+                    buttonContainer.appendChild(onButton);
+                    buttonContainer.appendChild(offButton);
+
+                    li.appendChild(deviceInfo);
+                    li.appendChild(buttonContainer);
                     list.appendChild(li);
                 });
             });
@@ -33,16 +48,27 @@ function fetchDevices() {
 
 function fetchStatus(deviceId) {
     return fetch(`/status/${deviceId}`)
-        .then(response => response.json())
-        .then(data => data.status)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                console.error(`Status fetch error for ${deviceId}:`, data.error);
+                return 'unknown'; 
+            }
+            console.log(`Status for ${deviceId}:`, data.status);
+            return data.status;
+        })
         .catch(error => {
             console.error('Error fetching status:', error);
             return 'unknown'; // or another default status
         });
 }
 
-function createButton(text, onClick) {
+function createButton(text, className, onClick) {
     const button = document.createElement('button');
+    button.className = className;
     button.textContent = text;
     button.onclick = onClick;
     return button;
